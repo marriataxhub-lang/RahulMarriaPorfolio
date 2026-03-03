@@ -315,6 +315,7 @@ h3 {
 .hero-signals article,
 .metric-card,
 .feature-card,
+.overview-card,
 .showcase-card,
 .education-card,
 .contact-card {
@@ -437,8 +438,18 @@ h3 {
   gap: 16px;
 }
 
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
 .feature-card {
   padding: 20px;
+}
+
+.overview-card {
+  padding: 22px;
 }
 
 .feature-card h3 {
@@ -446,8 +457,32 @@ h3 {
   font-size: 1.55rem;
 }
 
+.overview-card h3 {
+  margin-top: 10px;
+  font-size: 1.6rem;
+}
+
 .feature-card p {
   margin-top: 12px;
+}
+
+.detail-list {
+  margin: 14px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.detail-list li + li {
+  margin-top: 8px;
+}
+
+.detail-list-contrast {
+  color: rgba(242, 248, 245, 0.88);
+}
+
+.detail-list-contrast li::marker {
+  color: rgba(242, 248, 245, 0.88);
 }
 
 .timeline {
@@ -504,10 +539,6 @@ h3 {
   color: var(--accent);
   font-size: 0.82rem;
   font-weight: 800;
-}
-
-.timeline-body p {
-  margin-top: 12px;
 }
 
 .showcase-section {
@@ -606,13 +637,32 @@ h3 {
   overflow-wrap: anywhere;
 }
 
+.final-cta {
+  display: grid;
+  gap: 14px;
+  text-align: center;
+  justify-items: center;
+}
+
+.final-cta h2 {
+  max-width: 16ch;
+}
+
+.final-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
 @media (max-width: 1024px) {
   .hero-grid,
   .summary-layout,
   .showcase-section,
   .contact-section,
   .education-grid,
-  .summary-cards {
+  .summary-cards,
+  .overview-grid {
     grid-template-columns: 1fr;
   }
 
